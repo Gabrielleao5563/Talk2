@@ -1,0 +1,20 @@
+/* Div that holds the interactive interface */
+.main-content-div {
+
+    min-height: 40%;
+    width: 90%;
+    padding: 1%;
+    border-radius: 30px;
+
+    max-height: 800px;
+    max-width: 800px;
+
+    background-color: var(--color1bg);
+    box-shadow: var(--color1boxshadow) 20px 20px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}

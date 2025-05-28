@@ -1,0 +1,39 @@
+:root {
+
+    /* Identity */
+    --ident1color: #084d75;
+    --ident2color: #112836;
+    --ident3color: #754708;
+    --ident4color: #CA9752;
+    --ident5color: #8CCEF5;
+    --ident6color: #0b9185;
+
+    /* Interface general colors */
+    --attentionColor: #b4bd33;
+    --warningColor: #832020;
+    --sucessColor: #368a0f;
+    --failColor: #2f0141;
+
+    /* BG color */
+    --color1bg: #1f1f1f;
+    --color2bg: #2e2e2e;
+    --color3bg: #c0c0c0;
+    --color4bg: #ffff;
+
+    /* Box Shadow */
+    --color1boxshadow: #ffff;
+
+    /* text color */
+    --color1text: #ffff;
+
+    /* text fonts */
+    --font1text: 'Arial';
+
+    /* focused elements*/
+    --border1focused: #084d75;
+
+}
+
+.borda {
+    border: solid cyan 1px;
+}

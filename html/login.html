@@ -1,0 +1,119 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talk2 - Login</title>
+
+    <!--General-->
+    <link rel="stylesheet" href="../css/General/vars.css">
+    <link rel="stylesheet" href="../css/General/defaultReset.css">
+    <link rel="stylesheet" href="../css/General/hidden.css">
+
+    <!--Main Structure-->
+    <link rel="stylesheet" href="../css/Login/main.css">
+    <link rel="stylesheet" href="../css/Login/mainContentDiv.css">
+
+    <!--Sections-->
+    <link rel="stylesheet" href="../css/Login/loginSection.css">
+    <link rel="stylesheet" href="../css/Login/signupSection.css">
+
+    <!--Page focused elements-->
+    <link rel="stylesheet" href="../css/Login/inputHintElements.css">
+</head>
+<body onload="loadedPage()">
+    <main>
+
+        <!--Main div content-->
+        <div class="main-content-div">
+
+            <!--Header title-->
+            <h1 id="topHeader" class="main-content-div-header">Fazer Login</h1>
+
+            <!--Content including loging-->
+            <div id="logingDiv" class="loging-section-div">
+
+                <!--Input holder-->
+                <div class="input-holder">
+                    <input type="text" id="login-input" placeholder="Insira seu e-mail...">
+                </div>
+
+                <!--Continue button-->
+                <div class="continue-button">
+                    <p onclick="proceedProcess()">Continuar</p>
+                </div>
+
+                <!--Change mode button-->
+                <div class="change-mode-button">
+                    <p onclick="changeMode('signup')">Criar conta</p>
+                </div>
+
+            </div>
+
+            <!--Content including sign up-->
+            <div id="signingDiv" class="signup-section-div">
+
+                <!--Email guides-->
+                <div class="GuideDiv">
+
+                    <p id="signupHint1" class="GuideText">null content</p>
+
+                </div>
+
+                <!--Email input-->
+                <div class="input-holder">
+                    <input id="signupEmailInput" type="text" placeholder="Insira seu e-mail...">
+                </div>
+
+                <!--Password guides-->
+                <div class="GuideDiv">
+
+                    <p id="signupHint2" class="GuideText">Senha muito curta - 0 de 6 caracteres</p>
+                    <p id="signupHint3" class="GuideText">Não possui uma letra maiúscula</p>
+                    <p id="signupHint4" class="GuideText">Não possui uma letra minúscula</p>
+                    <p id="signupHint5" class="GuideText">Não possui um número</p>
+                    <p id="signupHint6" class="GuideText">Não possui um caractere especial</p>
+                    <p id="signupHint7" class="GuideText">Digite novamente no segundo campo</p>
+
+                </div>
+
+                <!--Password inputs-->
+                <div class="input-holder">
+                    <input onkeyup="updateSignupHints('input1')" id="signupPass1" type="text" placeholder="Crie uma senha...">
+                </div>
+                <div class="input-holder">
+                    <input onkeyup="updateSignupHints('input2')" id="signupPass2" type="text" placeholder="Repita a senha...">
+                </div>
+
+                <!--Continue button-->
+                <div class="continue-button">
+                    <p onclick="proceedProcess()">Continuar</p>
+                </div>
+
+                <!--Change mode button-->
+                <div class="change-mode-button">
+                    <p onclick="changeMode('login')">Entrar em uma conta</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+</body>
+
+<!--Integration-->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="../JavaScript/SupaBase/integration.js"></script>
+
+<!--General codes-->
+<script src="../JavaScript/General/checkLogin.js"></script>
+<script src="../JavaScript/General/isLetter.js"></script>
+
+<!--Page specific-->    
+<script src="../JavaScript/Login/onLoad.js"></script>
+<script src="../JavaScript/Login/logOrSignupControl.js"></script>
+<script src="../JavaScript/Login/accountCreation.js"></script>
+<script src="../JavaScript/Login/proceedButton.js"></script>
+<script src="../JavaScript/Login/SignupExclusive/hintsInterface.js"></script>
+
+</html>

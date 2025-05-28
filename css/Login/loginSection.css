@@ -1,0 +1,133 @@
+/* Header title on top */
+.main-content-div-header {
+
+    color: var(--color1text);
+    font-family: var(--font1text);
+
+    margin: auto;
+    text-align: center;
+
+    width: 100%;
+
+}
+
+/* Loging section holder */
+.loging-section-div {
+
+    width: 70%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+}
+
+/* Div that holds a input */
+.input-holder {
+
+    margin-top: 2vh;
+    width: 100%;
+
+}
+.input-holder > input {
+
+    width: 100%;
+    
+    line-height: 200%;
+    text-align: center;
+    font-family: var(--font1text);
+    background-color: var(--color2bg);
+    border: solid 1px var(--color3bg);
+    color: var(--color1text);
+
+}
+
+/* Input behavior when its on focus */
+.input-holder > input:focus {
+    
+    outline: solid 3px var(--border1focused);
+    border: none;
+
+}
+
+/* Continue button */
+.continue-button {
+
+    width: 48%;
+
+}
+.continue-button > p {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 100%;
+    margin-top: 2vh;
+    height: 3vh;
+    font-weight: bold;
+    cursor: pointer;
+
+    background-color: var(--color4bg);
+    color: var(--ident1color);
+    font-family: var(--font1text);
+    
+    transition-duration: 0.3s;
+
+}
+.continue-button > p:hover {
+
+    background-color: var(--ident6color);
+    color: var(--color1text);
+
+}
+
+/* Create account button */
+.change-mode-button {
+
+    width: 48%;
+
+}
+.change-mode-button > p {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 100%;
+    margin-top: 2vh;
+    height: 3vh;
+    font-weight: bold;
+    cursor: pointer;
+
+    background-color: var(--ident6color);
+    color: var(--color1text);
+    font-family: var(--font1text);
+
+    transition-duration: 0.3s;
+
+}
+.change-mode-button > p:hover {
+
+    background-color: var(--color4bg);
+    color: var(--ident1color);
+
+}
+
+/* Elements that need exclusive adjustments for smaller screens */
+@media (max-width: 768px){
+
+    .continue-button {
+
+        width: 100%;
+
+    }
+    .change-mode-button {
+
+        width: 100%;
+
+    }
+
+}
