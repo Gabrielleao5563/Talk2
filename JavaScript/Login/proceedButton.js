@@ -5,6 +5,114 @@ function proceedProcess(condition){
 
         //Login
         case 1:
+
+            //Error and hints boxes
+            var campo1 = document.getElementById("logingGuide1");
+
+            function loginUpdateErrorText(action, text){
+                
+                switch(action){
+
+                    case "text":
+
+                        campo1.innerHTML=text;
+                        break;
+
+                    case "color":
+
+                        campo1.style.backgroundColor=text;
+                        break;
+
+                }
+
+                if(action == "reset"){
+
+                    campo1.style.display="none";
+
+                }else{
+
+                    campo1.style.display="block";
+
+                }
+
+            }
+
+            var signingAsText = document.getElementById("logingAsText");
+
+            //Inputs
+            var inputEmail = document.getElementById("loginEmailInput");
+            var inputPassword = document.getElementById("loginPasswordInput");
+
+            //Check if the e-mail is valid
+
+            loginUpdateErrorText("reset");
+
+            if(inputEmail.value == ""){
+                
+                loginUpdateErrorText("text", "Este campo não pode estar vazio");
+                return;
+
+            }
+
+            var emailCheckingResult = "false";
+
+            for(i = inputEmail.value.length - 1; i >= 0; i--){
+
+                var character = inputEmail.value.charAt(i);
+
+                if(character == "@"){
+
+                    emailCheckingResult = "true";
+
+                }
+
+            }
+
+            if(emailCheckingResult == "false"){
+
+                loginUpdateErrorText("text", "O e-mail inserido não é válido");
+                return;
+
+            }
+
+            //SUPABASE ---------------------
+
+            updateLoading("start");
+
+            var email = inputEmail.value;
+            var password = inputPassword.value;
+
+            async function logUser(){
+
+                try{
+
+                    const{ data, error } = await supabaseclient.auth.signInWithPassword({
+
+                        email,
+                        password
+
+                    });
+
+                    if(error){
+
+
+
+                    }else{
+
+
+
+                    }
+
+                }catch{
+
+
+
+                }
+
+            }
+
+            logUser();
+
             break;
 
         //Signup
@@ -115,6 +223,8 @@ function proceedProcess(condition){
 
             async function registerUser(){
 
+                updateLoading("start");
+
                 //Send the data to server
                 const { data, error } = await supabaseclient.auth.signUp({
 
@@ -133,10 +243,12 @@ function proceedProcess(condition){
                 }else{
 
                     console.log("O usuário foi cadastrado: " + data);
-                    changeEmailHintConfiguration("text", "Sucesso! Verifique seu e-mail");
+                    changeEmailHintConfiguration("text", "Verifique seu e-mail e tente fazer login");
                     changeEmailHintConfiguration("color", "var(--sucessColor)");
 
                 }
+
+                updateLoading("end");
 
             }
 

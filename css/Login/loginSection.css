@@ -116,6 +116,17 @@
 
 }
 
+/* Title holding the email being used for login */
+.logingAsText {
+
+    color: var(--color1text);
+    font-family: var(--font1text);
+    font-weight: normal;
+    font-size: 1.5em;
+    display: none;
+
+}
+
 /* Elements that need exclusive adjustments for smaller screens */
 @media (max-width: 768px){
 

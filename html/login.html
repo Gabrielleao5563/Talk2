@@ -3,11 +3,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talk2 - Login</title>
+    <link rel="shortcut icon" href="../icons/favicons/talk2.png" type="image/x-icon">
 
     <!--General-->
     <link rel="stylesheet" href="../css/General/vars.css">
     <link rel="stylesheet" href="../css/General/defaultReset.css">
     <link rel="stylesheet" href="../css/General/hidden.css">
+    <link rel="stylesheet" href="../css/General/loading.css">
 
     <!--Main Structure-->
     <link rel="stylesheet" href="../css/Login/main.css">
@@ -21,6 +23,9 @@
     <link rel="stylesheet" href="../css/Login/inputHintElements.css">
 </head>
 <body onload="loadedPage()">
+    <div id="loadingHolder" style="display: none;" class="loadingHolder">
+        <img src="../icons/interface/loading.gif" alt="loadingIcon">
+    </div>
     <main>
 
         <!--Main div content-->
@@ -32,14 +37,23 @@
             <!--Content including loging-->
             <div id="logingDiv" class="loging-section-div">
 
+                <!--Guiding boxes-->
+                <div class="GuideDiv">
+                    <p id="logingGuide1" class="GuideText" style="display: none;">null</p>
+                </div>
+
                 <!--Input holder-->
+                <h1 class="logingAsText" id="logingAsText">null</h1>
                 <div class="input-holder">
-                    <input type="text" id="login-input" placeholder="Insira seu e-mail...">
+                    <input type="text" id="loginEmailInput" placeholder="Insira seu e-mail...">
+                </div>
+                <div class="input-holder">
+                    <input type="password" id="loginPasswordInput" placeholder="Insira a senha...">
                 </div>
 
                 <!--Continue button-->
                 <div class="continue-button">
-                    <p onclick="proceedProcess()">Continuar</p>
+                    <p onclick="proceedProcess(1)">Continuar</p>
                 </div>
 
                 <!--Change mode button-->
@@ -108,6 +122,7 @@
 <!--General codes-->
 <script src="../JavaScript/General/checkLogin.js"></script>
 <script src="../JavaScript/General/isLetter.js"></script>
+<script src="../JavaScript/General/loading.js"></script>
 
 <!--Page specific-->    
 <script src="../JavaScript/Login/onLoad.js"></script>
