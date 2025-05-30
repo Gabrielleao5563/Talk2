@@ -1,0 +1,27 @@
+/* The div that holds the hints texts */
+.GuideDiv {
+
+    width: 100%;
+    margin-top: 2vh;
+
+}
+
+/* text that appear on the hints boxes */
+.GuideText {
+
+    min-height: 1vh;
+    margin-top: 1vh;
+    padding: 1vh;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: var(--color1text);
+    font-family: var(--font1text);
+    font-weight: bold;
+    background-color: var(--warningColor);
+
+}

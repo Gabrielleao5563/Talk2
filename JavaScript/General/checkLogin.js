@@ -11,15 +11,29 @@ const checkLogin = async () => {
     }
 
     const session = data.session;
-    const alreadyonpage = window.location.pathname.includes('login.html');
+
+    var atLogin = "false";
+    var atReset = "false";
+
+    if(window.location.pathname.includes('login.html')){
+
+        atLogin = "true";
+
+    }
+
+    if(window.location.pathname.includes('passwordReset.html')){
+
+        atReset = "true";
+
+    }
 
     if(session){
 
         console.log("Logado em: " + session.user);
 
-        if(alreadyonpage){
+        if(atLogin == "true"){
 
-            window.location.href="home.html";
+            window.location.href="login.html";
 
         }
 
@@ -27,13 +41,15 @@ const checkLogin = async () => {
 
         console.log("Nenhum login encontrado!");
 
-        if(!alreadyonpage){
+        if(atLogin != "true" && atReset != "true"){
 
             window.location.href="login.html";
 
         }
 
     }
+
+    console.log("Login: " + atLogin + " | Reset: " + atReset);
 
 }
 

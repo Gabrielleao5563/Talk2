@@ -1,0 +1,47 @@
+/* Buttons */
+.continueButton {
+
+    width: 100%;
+
+}
+.continueButton > p {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 100%;
+    margin-top: 2vh;
+    height: 5vh;
+    font-weight: bold;
+    cursor: pointer;
+
+    background-color: var(--ident6color);
+    color: var(--color1text);
+    font-family: var(--font1text);
+
+    transition-duration: 0.3s;
+
+}
+.continueButton:hover > p {
+
+    background-color: rgb(207, 207, 207);
+    color: var(--ident1color);
+
+}
+
+/* Elements that need exclusive adjustments for smaller screens */
+@media (max-width: 768px){
+
+    .continueButton > p {
+
+        height: 5vh;
+
+    }
+    .continueButton > p {
+
+        margin-bottom: 2vh;
+
+    }
+
+}

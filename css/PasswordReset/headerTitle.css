@@ -1,0 +1,13 @@
+/* Header title on top */
+.topHeaderTitle {
+
+    color: black;
+    font-family: var(--font1text);
+
+    margin-top: 2vh;
+
+    text-align: center;
+
+    width: 100%;
+
+}
