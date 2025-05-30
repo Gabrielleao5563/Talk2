@@ -21,6 +21,7 @@
 
     <!--Page focused elements-->
     <link rel="stylesheet" href="../css/Login/inputHintElements.css">
+
 </head>
 <body onload="loadedPage()">
     <div id="loadingHolder" style="display: none;" class="loadingHolder">
@@ -43,7 +44,6 @@
                 </div>
 
                 <!--Input holder-->
-                <h1 class="logingAsText" id="logingAsText">null</h1>
                 <div class="input-holder">
                     <input type="text" id="loginEmailInput" placeholder="Insira seu e-mail...">
                 </div>
@@ -61,6 +61,11 @@
                     <p onclick="changeMode('signup')">Criar conta</p>
                 </div>
 
+                <!--Forgot password btn-->
+                <div class="forgot-password-button">
+                    <p onclick="goTo('passwordReset.html')">Esqueci minha senha</p>
+                </div>
+
             </div>
 
             <!--Content including sign up-->
@@ -69,7 +74,7 @@
                 <!--Email guides-->
                 <div class="GuideDiv">
 
-                    <p id="signupHint1" class="GuideText" style="display: none;">null content</p>
+                    <p id="signupHint1" class="GuideText">null content</p>
 
                 </div>
 
@@ -81,21 +86,16 @@
                 <!--Password guides-->
                 <div class="GuideDiv">
 
-                    <p id="signupHint2" class="GuideText">Senha muito curta - 0 de 6 caracteres</p>
-                    <p id="signupHint3" class="GuideText">Não possui uma letra maiúscula</p>
-                    <p id="signupHint4" class="GuideText">Não possui uma letra minúscula</p>
-                    <p id="signupHint5" class="GuideText">Não possui um número</p>
-                    <p id="signupHint6" class="GuideText">Não possui um caractere especial</p>
-                    <p id="signupHint7" class="GuideText">Digite novamente no segundo campo</p>
+                    <p id="signupHint2" class="GuideText">null</p>
 
                 </div>
 
                 <!--Password inputs-->
                 <div class="input-holder">
-                    <input onkeyup="updateSignupHints('input1')" id="signupPass1" type="text" placeholder="Crie uma senha...">
+                    <input id="signupPass1" type="text" placeholder="Crie uma senha...">
                 </div>
                 <div class="input-holder">
-                    <input onkeyup="updateSignupHints('input2')" id="signupPass2" type="text" placeholder="Repita a senha...">
+                    <input id="signupPass2" type="text" placeholder="Repita a senha...">
                 </div>
 
                 <!--Continue button-->
@@ -123,12 +123,13 @@
 <script src="../JavaScript/General/checkLogin.js"></script>
 <script src="../JavaScript/General/isLetter.js"></script>
 <script src="../JavaScript/General/loading.js"></script>
+<script src="../JavaScript/General/goTo.js"></script>
 
 <!--Page specific-->    
 <script src="../JavaScript/Login/onLoad.js"></script>
 <script src="../JavaScript/Login/logOrSignupControl.js"></script>
 <script src="../JavaScript/Login/accountCreation.js"></script>
 <script src="../JavaScript/Login/proceedButton.js"></script>
-<script src="../JavaScript/Login/SignupExclusive/hintsInterface.js"></script>
+<script src="../JavaScript/Login/forgotPassword.js"></script>
 
 </html>

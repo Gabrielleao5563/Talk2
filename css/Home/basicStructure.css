@@ -1,0 +1,37 @@
+/* Lateral Menu */
+nav {
+
+    min-height: 20vh;
+    width: 100%;
+    max-width: 80px;
+
+    position: absolute;
+    left: 2%;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    background-color: var(--color1bg);
+    border-radius: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* user icon */
+.navUserIconLabel {
+
+    width: 70%;
+
+}
+.navUserIconLabel > img {
+
+
+    width: 100%;
+
+    border-radius: 50%;
+    border: 2px solid var(--color3bg);
+
+}

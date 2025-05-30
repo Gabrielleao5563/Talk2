@@ -1,10 +1,11 @@
 /* Header title on top */
 .main-content-div-header {
 
-    color: var(--color1text);
+    color: black;
     font-family: var(--font1text);
 
-    margin: auto;
+    margin-top: 2vh;
+
     text-align: center;
 
     width: 100%;
@@ -35,7 +36,7 @@
 
     width: 100%;
     
-    line-height: 200%;
+    line-height: 300%;
     text-align: center;
     font-family: var(--font1text);
     background-color: var(--color2bg);
@@ -66,11 +67,11 @@
 
     width: 100%;
     margin-top: 2vh;
-    height: 3vh;
+    height: 5vh;
     font-weight: bold;
     cursor: pointer;
 
-    background-color: var(--color4bg);
+    background-color: rgb(207, 207, 207);
     color: var(--ident1color);
     font-family: var(--font1text);
     
@@ -98,7 +99,7 @@
 
     width: 100%;
     margin-top: 2vh;
-    height: 3vh;
+    height: 5vh;
     font-weight: bold;
     cursor: pointer;
 
@@ -111,24 +112,63 @@
 }
 .change-mode-button > p:hover {
 
-    background-color: var(--color4bg);
+    background-color: rgb(207, 207, 207);
     color: var(--ident1color);
 
 }
 
-/* Title holding the email being used for login */
-.logingAsText {
+/* Forgot password button */
+.forgot-password-button {
 
-    color: var(--color1text);
+    cursor: pointer;
+
+    text-align: center;
+
+    width: 100%;
+
+}
+.forgot-password-button > p {
+
+    width: 100%;
+    height: 3vh;
+
+    margin-top: 2vh;
+
+    color: black;
+    background-color: rgb(207, 207, 207);
     font-family: var(--font1text);
-    font-weight: normal;
-    font-size: 1.5em;
-    display: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.forgot-password-button:hover > p {
+
+    background-color: var(--color2bg);
 
 }
 
 /* Elements that need exclusive adjustments for smaller screens */
 @media (max-width: 768px){
+
+    .input-holder > input {
+    
+        line-height: 350%;
+
+    }
+
+    .continue-button > p, .change-mode-button > p {
+
+        height: 5vh;
+
+    }
+    .change-mode-button > p {
+
+        margin-bottom: 2vh;
+
+    }
 
     .continue-button {
 
@@ -138,6 +178,17 @@
     .change-mode-button {
 
         width: 100%;
+
+    }
+
+    .forgot-password-button {
+        margin-bottom: 2vh;
+    }
+
+    .forgot-password-button > p {
+
+        height: 4vh;
+        margin-top: 0vh;
 
     }
 

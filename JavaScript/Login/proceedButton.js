@@ -31,7 +31,7 @@ function proceedProcess(condition){
 
                 }else{
 
-                    campo1.style.display="block";
+                    campo1.style.display="flex";
 
                 }
 
@@ -95,23 +95,28 @@ function proceedProcess(condition){
 
                     if(error){
 
-
+                        console.error("Erro no login: " + error.message);
+                        loginUpdateErrorText("text", error.message);
 
                     }else{
 
-
+                        //Login done sucessfully
+                        window.location.href="home.html";
 
                     }
 
-                }catch{
+                }catch (e){
 
-
+                    console.error("Erro no login: " + e.message);
+                    loginUpdateErrorText("text", e.message);
 
                 }
 
             }
 
             logUser();
+
+            updateLoading("end");
 
             break;
 
@@ -149,7 +154,7 @@ function proceedProcess(condition){
 
                 }else{
 
-                    emailHint.style.display="block";
+                    emailHint.style.display="flex";
 
                 }
 
@@ -157,15 +162,41 @@ function proceedProcess(condition){
 
             //Vars about the password
             var inputPassword1 = document.getElementById("signupPass1");
-            var inputPasswrod2 = document.getElementById("signupPass2");
+            var inputPassword2 = document.getElementById("signupPass2");
 
             //about password security
-            var passwordHint1 = document.getElementById("signupHint2");
-            var passwordHint2 = document.getElementById("signupHint3");
-            var passwordHint3 = document.getElementById("signupHint4");
-            var passwordHint4 = document.getElementById("signupHint5");
-            var passwordHint5 = document.getElementById("signupHint6");
-            var passwordHint6 = document.getElementById("signupHint7");
+            var passwordHint = document.getElementById("signupHint2");
+
+            function changePasswordHintConfiguration(action, value){
+
+                switch(action){
+
+                    case "text":
+
+                        passwordHint.innerHTML=value;
+                        break;
+
+                    case "color":
+
+                        passwordHint.style.backgroundColor=value;
+                        break;
+
+                }
+
+                if(action == "reset"){
+
+                    passwordHint.style.display="none";
+
+                }else{
+
+                    passwordHint.style.display="flex";
+
+                }
+
+            }
+
+            changeEmailHintConfiguration("reset");
+            changePasswordHintConfiguration("reset");
 
             //EMAIL CHECKING ---------------
 
@@ -178,8 +209,6 @@ function proceedProcess(condition){
 
             }
 
-            changeEmailHintConfiguration("reset");
-
             //Check if there is some " " on the email
             for(i = inputEmail.value.length -1; i >= 0; i--){
 
@@ -191,28 +220,120 @@ function proceedProcess(condition){
                     changeEmailHintConfiguration("color", "var(--warningColor)");
                     return;
 
-                }else{
-                    
-                    changeEmailHintConfiguration("reset");
-
                 }
 
             }
 
             //PASWORD CHECKING ---------------
-            for(i = 7; i > 1; i--){
+            
+            //Check size
+            if(inputPassword1.value < 6){
 
-                var hintOnCheck = document.getElementById(String("signupHint" + i));
+                changePasswordHintConfiguration("text", "A senha deve conter ao menos 6 caracteres");
+                return;
 
-                if(hintOnCheck.style.backgroundColor == "var(--sucessColor)" | hintOnCheck.style.backgroundColor == "var(--attentionColor)"){
+            }
 
-                    //Do nothing
+            //Check Uppercase
+            var passwordUppercaseTest = "false";
 
-                }else{
+            for(i = inputPassword1.value.length - 1; i >= 0; i--){
 
-                    return;
+                var character = inputPassword1.value.charAt(i);
+
+                if(character == character.toUpperCase()){
+
+                    passwordUppercaseTest = "true";
 
                 }
+
+            }
+
+            if(passwordUppercaseTest != "true"){
+
+                changePasswordHintConfiguration("text", "Deve conter uma letra maiúscula");
+                return;
+
+            }
+
+            //Check Lowercase
+            var passwordLowercaseTest = "false";
+
+            for(i = inputPassword1.value.length - 1; i >= 0; i--){
+                
+                var character = inputPassword1.value.charAt(i);
+
+                if(character == character.toLowerCase()){
+
+                    passwordLowercaseTest = "true";
+
+                }
+
+            }
+
+            if(passwordLowercaseTest != "true"){
+
+                changePasswordHintConfiguration("text", "Deve conter uma minúscula");
+                return;
+
+            }
+
+            //Check Numbers
+            var passwordNumbersTest = "false";
+
+            for(i = inputPassword1.value.length - 1; i >= 0; i--){
+                
+                var character = inputPassword1.value.charAt(i);
+
+                if(isNaN(character) == false){
+
+                    passwordNumbersTest = "true";
+
+                }
+
+            }
+
+            if(passwordNumbersTest != "true"){
+
+                changePasswordHintConfiguration("text", "Deve conter números");
+                return;
+
+            }
+
+            //Check Xpecial character
+            var passwordXpecialCharacterTest = "false";
+
+            for(i = inputPassword1.value.length - 1; i >= 0; i--){
+                
+                var character = inputPassword1.value.charAt(i);
+
+                if(isNaN(character) == true && isLetter(character) == false){
+
+                    passwordXpecialCharacterTest = "true";
+
+                }
+
+            }
+
+            if(passwordXpecialCharacterTest != "true"){
+                
+                changePasswordHintConfiguration("text", "Deve conter caracteres especiais");
+                return;
+
+            }
+
+            //Compare passwords
+            if(inputPassword2.value == ""){
+
+                changePasswordHintConfiguration("text", "Digite a senha novamente no segundo campo");
+                return;
+
+            }
+
+            if(inputPassword1.value != inputPassword2.value){
+
+                changePasswordHintConfiguration("text", "As senhas não são idênticas");
+                return;
 
             }
 
