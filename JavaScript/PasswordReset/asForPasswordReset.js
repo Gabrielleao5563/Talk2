@@ -40,6 +40,7 @@ function askForPasswordReset(){
     if(inputEmail.value == ""){
 
         changeEmailHintConfiguration("text", "Este campo não pode estar vazio");
+        changeEmailHintConfiguration("color", "var(--warningColor)");
         return;
 
     }
@@ -61,11 +62,21 @@ function askForPasswordReset(){
     if(characterVerificationTest != "true"){
 
         changeEmailHintConfiguration("text", "O e-mail inserido não é válido");
+        changeEmailHintConfiguration("color", "var(--warningColor)");
         return;
 
     }
 
     //SUPABASE ----------
     var email = inputEmail.value;
+
+    supabaseclient.auth.resetPasswordForEmail(email, {
+
+        redirectTo: 'https://whisp.com.br/html/newPassword.html'
+
+    })
+
+    changeEmailHintConfiguration("text", "Um e-mail foi enviado para '" + email + "'!");
+    changeEmailHintConfiguration("color", "var(--sucessColor)");
 
 }

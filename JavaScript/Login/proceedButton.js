@@ -96,7 +96,15 @@ function proceedProcess(condition){
                     if(error){
 
                         console.error("Erro no login: " + error.message);
-                        loginUpdateErrorText("text", error.message);
+
+                        switch(error.message){
+
+                            case "Invalid login credentials":
+
+                                loginUpdateErrorText("text", "Credenciais de login inválidas");
+                                break;
+
+                        }
 
                     }else{
 
@@ -108,7 +116,7 @@ function proceedProcess(condition){
                 }catch (e){
 
                     console.error("Erro no login: " + e.message);
-                    loginUpdateErrorText("text", e.message);
+                    loginUpdateErrorText("text", "Ocorreu um erro inesperado. Sinto muito por isso.")
 
                 }
 
@@ -358,7 +366,17 @@ function proceedProcess(condition){
                 if(error){
 
                     console.error("Ocorreu um erro durante o cadastro: " + error.message);
-                    changeEmailHintConfiguration("text", error.message);
+
+                    switch(error.message){
+
+                        case "Unable to validate email address: invalid format":
+
+                            changeEmailHintConfiguration("text", "Não foi possível validar o e-mail inserido. Formato inválido");
+                            break;
+
+                    }
+
+
                     changeEmailHintConfiguration("color", "var(--warningColor)");
 
                 }else{
