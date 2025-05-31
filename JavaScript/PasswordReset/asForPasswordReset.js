@@ -44,8 +44,28 @@ function askForPasswordReset(){
 
     }
 
-    
+    var characterVerificationTest = "false";
+
+    for(i = inputEmail.value.length - 1; i >= 0; i--){
+
+        var character = inputEmail.value.charAt(i);
+
+        if(character == "@"){
+
+            characterVerificationTest = "true";
+
+        }
+
+    }
+
+    if(characterVerificationTest != "true"){
+
+        changeEmailHintConfiguration("text", "O e-mail inserido não é válido");
+        return;
+
+    }
 
     //SUPABASE ----------
+    var email = inputEmail.value;
 
 }
