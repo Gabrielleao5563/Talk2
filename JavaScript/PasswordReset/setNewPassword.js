@@ -180,6 +180,11 @@ function setNewPassword(){
 
             console.log("A senha foi atualizada com sucesso");
             window.alert("A sua senha foi atualizada com sucesso!");
+
+            localStorage.removeItem('supabase.auth.token');
+
+            window.alert("Realize novamente o seu login");
+
             window.location.href="home.html";
 
         }
