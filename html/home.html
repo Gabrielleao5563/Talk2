@@ -5,6 +5,9 @@
     <title>Whisp - Um site de conversas, online</title>
     <link rel="shortcut icon" href="../icons/favicons/talk2.png" type="image/x-icon">
 
+    <!--Animations-->
+    <link rel="stylesheet" href="../css/Home/animations.css">
+
     <!--General-->
     <link rel="stylesheet" href="../css/General/vars.css">
     <link rel="stylesheet" href="../css/General/defaultReset.css">
@@ -12,22 +15,55 @@
     <link rel="stylesheet" href="../css/General/loading.css">
 
     <!--Main Structure-->
+    <link rel="stylesheet" href="../css/Home/floatingMenu.css">
+    <link rel="stylesheet" href="../css/Home/genericContextWindows.css">
     <link rel="stylesheet" href="../css/Home/basicStructure.css">
 
 </head>
 <body>
-    <!--Lateral Menu-->
+    <!--Main floating Menu-->
     <nav>
 
         <!--User icon-->
-        <div class="navUserIconLabel">
+        <div class="navIconBox">
             <img src="../icons/icon/userGeneric.png" alt="userIcon">
         </div>
 
     </nav>
+
+
+
     <main>
 
+
+
     </main>
+
+
+
+
+
+    <!--Click blocker-->
+    <div class="clickBlocker"></div>
+
+    <!--Absolute windows-->
+    <div id="window-setPublicName" class="genericFloatingContextWindow">
+
+        <h1 class="genericFloatingContextWindowHeader">Defina um Nome público</h1>
+
+        <div class="genericDoubleOptionHolder">
+
+            <div class="genericDoubleOptionButton acceptButton">
+                <p>Definir</p>
+            </div>
+            <div class="genericDoubleOptionButton rejectButton">
+                <p>Depois</p>
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
 
 <!--Integration-->
@@ -40,5 +76,9 @@
 <script src="../JavaScript/General/loading.js"></script>
 <script src="../JavaScript/General/goTo.js"></script>
 <script src="../JavaScript/General/endSession.js"></script>
+<script src="../JavaScript/General/getDisplayName.js"></script>
+
+<!--page-->
+<script src="../JavaScript/Home/onLoad.js"></script>
 
 </html>

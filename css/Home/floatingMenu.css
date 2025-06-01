@@ -1,0 +1,106 @@
+/* Lateral Menu */
+nav {
+
+    position: absolute;
+    top: 50%;
+    left: 1%;
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 50px;
+    min-height: 20vh;
+
+    background-color: var(--ident4color);
+    border-radius: 30px;
+
+}
+
+/* icon box */
+.navIconBox {
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    position: relative;
+
+}
+.navIconBox > img {
+
+    width: 70%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+
+}
+
+/* icon box hover */
+.navIconBox:hover {
+
+    animation: PC-iconFloatingMenu 0.3s ease-in-out forwards;
+
+}
+
+/* selected */
+.selected {
+
+    border: solid 5px var(--ident4color);
+    border-radius: 50%;
+
+    transform: translateX(50%);
+
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 1023px){
+
+    /* floating menu */
+    nav {
+
+        position: absolute;
+        top: 1%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+
+        max-width: 60%;
+        min-height: unset;
+        min-height: 7vh;
+
+    }
+
+    /* icon box */
+    .navIconBox{
+
+        position: relative;
+
+        width: 8%;
+        min-height: 6vh;
+
+    }
+    .navIconBox > img {
+        width: 100%;
+    }
+
+    /* icon box hover */
+    .navIconBox:hover {
+
+        animation: MOBILE-iconFloatingMenu 0.3s ease-in-out forwards;
+
+    }
+
+    /* selected */
+    .selected {
+
+        transform: translateY(50%);
+
+    }
+
+}

@@ -1,7 +1,7 @@
 //Function that runs when the continue button is pressed
-function proceedProcess(condition){
+function proceedProcess(){
 
-    switch(condition){
+    switch(pagePosition){
 
         //Login
         case 1:
@@ -398,9 +398,23 @@ function proceedProcess(condition){
         //Error
         default:
 
-            console.error("The page is actually on a invalid position to continue! Mode: " + mode + "!");
+            console.error("The page is actually on a invalid position to continue! Mode: " + pagePosition + "!");
             break;
 
     }
 
 }
+
+//Click detector
+document.addEventListener("keyup", function(e){
+
+    switch(e.key){
+
+        case "Enter":
+
+            proceedProcess();
+            break;
+
+    }
+
+})

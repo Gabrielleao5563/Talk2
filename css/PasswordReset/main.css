@@ -14,3 +14,21 @@ main {
     background-image: linear-gradient(to right, #0b9185, #112836);
 
 }
+
+.bgDiv {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 0;
+
+    background-image: url('../../icons/image/bgImg1.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 15%;
+
+}

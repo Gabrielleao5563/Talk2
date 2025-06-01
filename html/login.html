@@ -21,6 +21,7 @@
 
     <!--Page focused elements-->
     <link rel="stylesheet" href="../css/Login/inputHintElements.css">
+    <link rel="stylesheet" href="../css/Login/passwordShower.css">
 
 </head>
 <body onload="loadedPage()">
@@ -28,6 +29,8 @@
         <img src="../icons/interface/loading.gif" alt="loadingIcon">
     </div>
     <main>
+
+        <div class="bgDiv"></div>
 
         <!--Main div content-->
         <div class="main-content-div">
@@ -47,13 +50,25 @@
                 <div class="input-holder">
                     <input type="text" id="loginEmailInput" placeholder="Insira seu e-mail...">
                 </div>
+
+                <div class="passwordShower">
+
+                    <div onclick="changePasswordVisibility()" class="passwordShowerButton">
+                        <img id="passwordVisibilityIcon" src="../icons/icon/hideIcon.png" alt="mostrar/ocultar senha">
+                    </div>
+                    <div class="passwordShowerText">
+                        <p id="passwordShowerText">Sua senha apareçe aqui</p>
+                    </div>
+
+                </div>
+
                 <div class="input-holder">
-                    <input type="password" id="loginPasswordInput" placeholder="Insira a senha...">
+                    <input type="password" id="loginPasswordInput" placeholder="Insira a senha..." onkeyup="loginPasswordTyping()">
                 </div>
 
                 <!--Continue button-->
                 <div class="continue-button">
-                    <p onclick="proceedProcess(1)">Continuar</p>
+                    <p onclick="proceedProcess()">Continuar</p>
                 </div>
 
                 <!--Change mode button-->
@@ -100,7 +115,7 @@
 
                 <!--Continue button-->
                 <div class="continue-button">
-                    <p onclick="proceedProcess(2)">Continuar</p>
+                    <p onclick="proceedProcess()">Continuar</p>
                 </div>
 
                 <!--Change mode button-->
@@ -132,5 +147,6 @@
 <script src="../JavaScript/Login/accountCreation.js"></script>
 <script src="../JavaScript/Login/proceedButton.js"></script>
 <script src="../JavaScript/Login/forgotPassword.js"></script>
+<script src="../JavaScript/Login/showPassword.js"></script>
 
 </html>

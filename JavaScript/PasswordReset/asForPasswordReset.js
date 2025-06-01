@@ -80,3 +80,17 @@ function askForPasswordReset(){
     changeEmailHintConfiguration("color", "var(--sucessColor)");
 
 }
+
+//Click detector
+document.addEventListener("keyup", function(e){
+
+    switch(e.key){
+
+        case "Enter":
+
+            askForPasswordReset();
+            break;
+
+    }
+
+});

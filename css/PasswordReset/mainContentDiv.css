@@ -1,6 +1,8 @@
 /* Div that holds the interactive interface */
 .main-content-div {
 
+    z-index: 1;
+
     min-height: 40%;
     width: 90%;
     padding: 1%;

@@ -71,8 +71,8 @@
     font-weight: bold;
     cursor: pointer;
 
-    background-color: rgb(207, 207, 207);
-    color: var(--ident1color);
+    background-color: var(--ident6color);
+    color: var(--color1text);
     font-family: var(--font1text);
     
     transition-duration: 0.3s;
@@ -80,8 +80,8 @@
 }
 .continue-button > p:hover {
 
-    background-color: var(--ident6color);
-    color: var(--color1text);
+    background-color: rgb(207, 207, 207);
+    color:  var(--ident1color);
 
 }
 
@@ -103,8 +103,8 @@
     font-weight: bold;
     cursor: pointer;
 
-    background-color: var(--ident6color);
-    color: var(--color1text);
+    background-color: rgb(207, 207, 207);
+    color: var(--ident1color);
     font-family: var(--font1text);
 
     transition-duration: 0.3s;
@@ -112,8 +112,8 @@
 }
 .change-mode-button > p:hover {
 
-    background-color: rgb(207, 207, 207);
-    color: var(--ident1color);
+    background-color: var(--ident6color);
+    color: var(--color1text);
 
 }
 

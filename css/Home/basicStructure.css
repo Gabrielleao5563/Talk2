@@ -1,37 +1,24 @@
-/* Lateral Menu */
-nav {
+/* main content */
+main {
 
-    min-height: 20vh;
-    width: 100%;
-    max-width: 80px;
-
-    position: absolute;
-    left: 2%;
-    top: 50%;
-
-    transform: translateY(-50%);
+    width: 100vw;
+    height: 100vh;
 
     background-color: var(--color1bg);
-    border-radius: 30px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
 }
 
-/* user icon */
-.navUserIconLabel {
+/* Click blocker */
+.clickBlocker {
 
-    width: 70%;
-
-}
-.navUserIconLabel > img {
-
-
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
 
-    border-radius: 50%;
-    border: 2px solid var(--color3bg);
+    z-index: 8;
+
+    backdrop-filter: blur(5px);
 
 }

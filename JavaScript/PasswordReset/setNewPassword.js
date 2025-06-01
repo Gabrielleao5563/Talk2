@@ -194,3 +194,17 @@ function setNewPassword(){
     sendNewPassword();
 
 }
+
+//Click detector
+document.addEventListener("keyup", function(e){
+
+    switch(e.key){
+
+        case "Enter":
+
+            setNewPassword();
+            break;
+
+    }
+
+});

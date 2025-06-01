@@ -1,5 +1,5 @@
 //This var save if the page is on Login or Signup Mode
-var mode = 0; 
+var pagePosition = 0; 
 //0 means nothing
 // 1 means loging
 // 2 means signup
@@ -20,7 +20,7 @@ function changeMode(mode){
 
         case "login":
 
-            mode = 1;
+            pagePosition = 1;
 
             decision1 = "flex";
             decision2 = "none";
@@ -31,7 +31,7 @@ function changeMode(mode){
 
         case "signup":
 
-            mode = 2;
+            pagePosition = 2;
 
             decision1 = "none";
             decision2 = "flex";
@@ -42,13 +42,13 @@ function changeMode(mode){
 
         default:
 
-            mode = 0;
+            pagePosition = 0;
             console.error("O modo escolhido é inválido, tente novamente!");
             break;
 
     }
 
-    if(mode != 0){
+    if(pagePosition != 0){
 
         loginDiv.style.display=decision1;
         signupDiv.style.display=decision2;

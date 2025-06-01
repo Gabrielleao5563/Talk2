@@ -1,0 +1,110 @@
+/* window */
+.genericFloatingContextWindow {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    width: 90%;
+    max-width: 700px;
+    min-height: 20vh;
+    transform: translate(-50%, -50%);
+
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+
+    z-index: 9;
+
+    background-color: var(--color4bg);
+    border-radius: 30px;
+
+}
+
+/* header */
+.genericFloatingContextWindowHeader {
+
+    width: 100%;
+
+    text-align: center;
+
+    font-family: var(--font1text);
+    color: var(--color1bg);
+
+}
+
+/* inputs */
+
+/* buttons */
+.genericDoubleOptionHolder {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 90%;
+}
+
+.genericDoubleOptionButton {
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: var(--font1text);
+    font-weight: bold;
+
+    width: 48%;
+    height: 4vh;
+
+}
+
+.acceptButton {
+
+    background-color: var(--ident4color);
+    color: var(--color2text);
+
+    transition-duration: 0.3s;
+
+}
+.acceptButton:hover {
+
+    background-color: var(--ident4colorHover);
+
+}
+
+.rejectButton {
+
+    background-color: var(--color1bg);
+    color: var(--color1text);
+
+    transition-duration: 0.3s;
+
+}
+.rejectButton:hover {
+
+    background-color: var(--color1bgHover);
+
+}
+
+
+
+@media (max-width: 768px){
+
+    /* Buttons */
+    .genericDoubleOptionButton {
+
+        width: 100%;
+        margin-bottom: 1vh;
+
+    }
+
+}

@@ -1,1 +1,56 @@
-function _0x4e3d(_0xfe1e9c,_0x3da39f){const _0x3e1055=_0x3e10();return _0x4e3d=function(_0x4e3d08,_0x9eda72){_0x4e3d08=_0x4e3d08-0x130;let _0x34e501=_0x3e1055[_0x4e3d08];return _0x34e501;},_0x4e3d(_0xfe1e9c,_0x3da39f);}(function(_0xc30c71,_0x16d7fb){const _0x20e88f=_0x4e3d,_0x823cd8=_0xc30c71();while(!![]){try{const _0x209ab1=parseInt(_0x20e88f(0x147))/0x1+-parseInt(_0x20e88f(0x13d))/0x2*(parseInt(_0x20e88f(0x13e))/0x3)+-parseInt(_0x20e88f(0x13f))/0x4*(parseInt(_0x20e88f(0x146))/0x5)+parseInt(_0x20e88f(0x138))/0x6*(-parseInt(_0x20e88f(0x131))/0x7)+-parseInt(_0x20e88f(0x144))/0x8+-parseInt(_0x20e88f(0x133))/0x9*(-parseInt(_0x20e88f(0x136))/0xa)+parseInt(_0x20e88f(0x149))/0xb*(parseInt(_0x20e88f(0x142))/0xc);if(_0x209ab1===_0x16d7fb)break;else _0x823cd8['push'](_0x823cd8['shift']());}catch(_0x452b08){_0x823cd8['push'](_0x823cd8['shift']());}}}(_0x3e10,0x33062));const checkLogin=async()=>{const _0x41a758=_0x4e3d,{data:_0x579502,error:_0x5cf386}=await supabaseclient[_0x41a758(0x145)][_0x41a758(0x148)]();if(_0x5cf386){console['error'](_0x41a758(0x134)+_0x5cf386['message']);return;}const _0x3134bf=_0x579502[_0x41a758(0x137)];var _0x3247c7=_0x41a758(0x141),_0x191f61='false';window['location'][_0x41a758(0x13a)][_0x41a758(0x130)](_0x41a758(0x13c))&&(_0x3247c7=_0x41a758(0x132)),window['location'][_0x41a758(0x13a)]['includes'](_0x41a758(0x13b))&&(_0x191f61=_0x41a758(0x132)),_0x3134bf?(console['log'](_0x41a758(0x14a)+_0x3134bf['user']),_0x3247c7==_0x41a758(0x132)&&(window['location'][_0x41a758(0x139)]=_0x41a758(0x13c))):(console[_0x41a758(0x135)]('Nenhum\x20login\x20encontrado!'),_0x3247c7!=_0x41a758(0x132)&&_0x191f61!=_0x41a758(0x132)&&(window[_0x41a758(0x140)]['href']=_0x41a758(0x13c))),console['log']('Login:\x20'+_0x3247c7+_0x41a758(0x143)+_0x191f61);};function _0x3e10(){const _0x10087c=['pathname','passwordReset.html','login.html','3994LPAhae','597zpDFbY','17516mYlyLe','location','false','579516DKtJCj','\x20|\x20Reset:\x20','2774560jcujUB','auth','155tHZcwf','29043MypVfP','getSession','242tFHEeU','Logado\x20em:\x20','includes','350FWwWqp','true','1953693BEOgPo','Erro\x20ao\x20verificar\x20a\x20sessão:\x20','log','10DwjJVa','session','26352ysbSkG','href'];_0x3e10=function(){return _0x10087c;};return _0x3e10();}checkLogin();
+//Checks if there is any active login as soon as the page loads
+const checkLogin = async () => {
+
+    const { data, error } = await supabaseclient.auth.getSession();
+
+    if(error){
+
+        console.error("Erro ao verificar a sessão: " + error.message);
+        return;
+
+    }
+
+    const session = data.session;
+
+    var atLogin = "false";
+    var atReset = "false";
+
+    if(window.location.pathname.includes('login.html')){
+
+        atLogin = "true";
+
+    }
+
+    if(window.location.pathname.includes('passwordReset.html')){
+
+        atReset = "true";
+
+    }
+
+    if(session){
+
+        console.log("Logado em: " + session.user);
+
+        if(atLogin == "true"){
+
+            window.location.href="home.html";
+
+        }
+
+    }else{
+
+        console.log("Nenhum login encontrado!");
+
+        if(atLogin != "true" && atReset != "true"){
+
+            window.location.href="login.html";
+
+        }
+
+    }
+
+    console.log("Login: " + atLogin + " | Reset: " + atReset);
+
+}
+
+checkLogin(); //Execute this whole function
