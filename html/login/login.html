@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Whisp - Fazer login</title>
+
+  <link rel="shortcut icon" href="../../icons/icon/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="login-page">
+    <!-- Loading overlay - agora cobre toda a tela -->
+    <div id="loadingHolder">
+      <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Lado visual (imagem/arte) -->
+    <div class="visual-side">
+      <img src="../../icons/image/bgImg1.png" alt="Imagem Login" />
+    </div>
+
+    <!-- Lado do formulário -->
+    <div class="form-side">
+      <div class="form-container">
+        <!-- Login -->
+        <div id="login-section" class="form-section active">
+          <h2>Entrar</h2>
+
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" placeholder="seu@email.com" />
+          <div class="error" id="login-email-error">Email inválido</div>
+
+          <label for="login-password">Senha</label>
+          <div class="password-toggle">
+            <input type="password" id="login-password" placeholder="Sua senha" />
+            <button onclick="changeLoginPasswordVisibility()" id="toggle-login-password">
+              <img id="toggle-login-password-icon" src="../../icons/icon/hideIcon.png" alt="Mostrar" width="20" />
+            </button>
+          </div>
+          <div class="error" id="login-password-error">Senha inválida</div>
+
+          <div class="actions">
+            <button id="login-continue" onclick="startLogin()">Continuar</button>
+            <button class="secondary" id="go-to-signup" onclick="changeToLoginAndSignUp('signup')">Criar conta</button>
+            <button onclick="loginForgotPassword()" class="link" id="forgot-password">Esqueci a senha</button>
+          </div>
+        </div>
+
+        <!-- Signup -->
+        <div id="signup-section" class="form-section">
+          <h2>Criar Conta</h2>
+
+          <label for="signup-email">Email</label>
+          <input type="email" id="signup-email" placeholder="seu@email.com" />
+          <div class="error" id="signup-email-error">Email inválido</div>
+
+          <label for="signup-password">Senha</label>
+          <input type="text" id="signup-password" placeholder="Digite a senha" />
+          <div class="error" id="signup-password-error">Senha inválida</div>
+
+          <label for="signup-confirm-password">Confirmar Senha</label>
+          <input type="text" id="signup-confirm-password" placeholder="Confirme a senha" />
+          <div class="error" id="signup-confirm-password-error">As senhas não coincidem</div>
+
+          <div class="actions">
+            <button id="signup-continue" onclick="startSignUp()">Continuar</button>
+            <button class="secondary" id="go-to-login" onclick="changeToLoginAndSignUp('login')">Entrar em uma conta</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS Scripts -->
+  <script>
+    window.onload = () => {
+      checkUserLogin();
+    };
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="../../javascript/supabaseIntegration.js"></script>
+  <script src="../../javascript/checkLogin.js"></script>
+  <script src="../../javascript/endSession.js"></script>
+  <script src="../../javascript/redirectTo.js"></script>
+  <script src="../../javascript/setWindow.js"></script>
+  <script src="../../javascript/loadingIcon.js"></script>
+  <script src="../../javascript/user/fetchUser.js"></script>
+  <script src="../../javascript/user/publicName.js"></script>
+  <script src="../../javascript/checkIfItsLetter.js"></script>
+
+  <script src="showPasswordFunction.js"></script>
+  <script src="changeToLoginAndSignUp.js"></script>
+  <script src="forgotPassword.js"></script>
+  <script src="login.js"></script>
+  <script src="signup.js"></script>
+  <script src="enter.js"></script>
+</body>
+</html>
