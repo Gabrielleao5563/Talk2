@@ -34,12 +34,12 @@ function changeLoginPasswordVisibility(){
         //decision checker
         if(decision == "true"){
 
-            button.src="../../icons/icon/showIcon.png";
+            button.src="../icons/icon/showIcon.png";
             input.type="text";
 
         }else{
 
-            button.src="../../icons/icon/hideIcon.png";
+            button.src="../icons/icon/hideIcon.png";
             input.type="password";
 
         }
@@ -57,12 +57,12 @@ window.onload = () => {
     //decision checker
     if(localStorage.getItem("loginPasswordStatus") == "true"){
 
-        button.src="../../icons/icon/showIcon.png";
+        button.src="../icons/icon/showIcon.png";
         input.type="text";
 
     }else{
 
-        button.src="../../icons/icon/hideIcon.png";
+        button.src="../icons/icon/hideIcon.png";
         input.type="password";
 
     }

@@ -101,7 +101,7 @@ function startLogin(){
 
             }else{
 
-                window.location.href="../home/home.html";
+                window.location.href="../home";
 
             }
 

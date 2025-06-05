@@ -45,7 +45,7 @@ async function checkUserLogin(){
         if(atLoginPage == "true"){
 
             //redirects the user out of that page
-            window.location.href="../home/home.html";
+            window.location.href="../home";
 
         }
 
@@ -58,7 +58,7 @@ async function checkUserLogin(){
         if(atLoginPage != "true" && atResetPasswordPage != "true"){
 
             //redirects the user to the login page
-            window.location.href="../login/login.html";
+            window.location.href="../login";
 
         }
 
